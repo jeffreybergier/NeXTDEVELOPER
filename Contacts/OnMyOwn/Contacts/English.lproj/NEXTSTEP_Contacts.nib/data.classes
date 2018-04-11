@@ -1,0 +1,2 @@
+"AppDelegate" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"FirstResponder" = {ACTIONS = {"new:" = id; }; OUTLETS = {}; SUPERCLASS = NSObject; };

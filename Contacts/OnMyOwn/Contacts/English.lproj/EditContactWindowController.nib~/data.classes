@@ -1,0 +1,2 @@
+"EditContactWindowController" = {ACTIONS = {}; OUTLETS = {window = id; }; SUPERCLASS = NSObject; };
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
