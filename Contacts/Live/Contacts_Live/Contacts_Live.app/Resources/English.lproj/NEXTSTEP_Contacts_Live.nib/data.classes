@@ -1,0 +1,6 @@
+"AppDelegate" = {
+    ACTIONS = {"newDocumentWindow:" = id; }; 
+    OUTLETS = {}; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };

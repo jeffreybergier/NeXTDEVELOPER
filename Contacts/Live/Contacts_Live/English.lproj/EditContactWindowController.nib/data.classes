@@ -1,0 +1,3 @@
+"EditContactWindowController" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = WindowController; };
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"WindowController" = {ACTIONS = {}; OUTLETS = {window = id; }; SUPERCLASS = NSObject; };
