@@ -8,8 +8,7 @@
 -(id)init;
 {
     self = [super init];
-    // initialization steps here
-    NSLog(@"AppDelegate INIT");
+    _openDocumentController = [[OpenDocumentController alloc] init];
     return self;
 }
 
@@ -20,9 +19,7 @@
 
 -(IBAction)newDocumentWindow:(id) sender;
 {
-    EditContactWindowController* wc = [[EditContactWindowController alloc] init];
-    [wc showWindow: sender];
-    [wc release];
+    [_openDocumentController newDocument:sender];
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector;
@@ -33,4 +30,18 @@
     return [super respondsToSelector:aSelector];
 }
 
+-(void)dealloc;
+{
+    NSLog(@"AppDelegate DEALLOC");
+    [_openDocumentController release];
+    [super dealloc];
+}
+
 @end
+
+
+
+
+
+
+

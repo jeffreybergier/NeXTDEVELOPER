@@ -2,9 +2,19 @@
     APPCLASS = NSApplication; 
     DYNAMIC_CODE_GEN = YES; 
     FILESTABLE = {
-        CLASSES = (AppDelegate.m, WindowController.m, EditContactWindowController.m); 
+        CLASSES = (
+            AppDelegate.m, 
+            WindowController.m, 
+            EditContactWindowController.m, 
+            OpenDocumentController.m
+        ); 
         FRAMEWORKS = (AppKit.framework, Foundation.framework); 
-        H_FILES = (AppDelegate.h, WindowController.h, EditContactWindowController.h); 
+        H_FILES = (
+            AppDelegate.h, 
+            WindowController.h, 
+            EditContactWindowController.h, 
+            OpenDocumentController.h
+        ); 
         INTERFACES = (
             EditContactWindowController.nib, 
             NEXTSTEP_Contacts_Live.nib, 

@@ -5,9 +5,10 @@
 
 @interface EditContactWindowController : WindowController
 {
-
+    NSString* _filePath;
 }
 
-- (id)init;
+- (id)initWithFilePath:(NSString*)aPath;
+- (NSString*)filePath;
 
 @end

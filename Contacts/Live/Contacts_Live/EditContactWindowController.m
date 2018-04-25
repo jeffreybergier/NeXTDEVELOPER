@@ -4,10 +4,22 @@
 
 @implementation EditContactWindowController
 
-- (id)init;
+- (id)initWithFilePath:(NSString*)aPath;
 {
     self = [super initWithWindowNibName: @"EditContactWindowController"];
+    _filePath = [aPath retain];
     return self;
+}
+
+- (NSString*)filePath;
+{
+    return _filePath;
+}
+
+- (void)dealloc;
+{
+    [_filePath release];
+    [super dealloc];
 }
 
 @end

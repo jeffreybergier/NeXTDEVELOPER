@@ -18,9 +18,11 @@ ICONSECTIONS =	-sectcreate __ICON app /NextLibrary/Frameworks/AppKit.framework/R
 LOCAL_RESOURCES = EditContactWindowController.nib\
                   NEXTSTEP_Contacts_Live.nib WINDOWS_Contacts_Live.nib
 
-CLASSES = AppDelegate.m WindowController.m EditContactWindowController.m
+CLASSES = AppDelegate.m WindowController.m EditContactWindowController.m\
+          OpenDocumentController.m
 
-HFILES = AppDelegate.h WindowController.h EditContactWindowController.h
+HFILES = AppDelegate.h WindowController.h EditContactWindowController.h\
+         OpenDocumentController.h
 
 MFILES = Contacts_Live_main.m
 

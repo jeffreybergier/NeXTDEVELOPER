@@ -16,17 +16,37 @@
    [[self window] makeKeyAndOrderFront: sender];
 }
 
+- (void)windowWillClose:(NSNotification*)aNotification;
+{
+    [_delegate windowDidCloseForWindowController:self];
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector;
+{
+    if (aSelector != NULL) {
+        NSLog(@"WC: RTS: %s", sel_getName(aSelector));
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 - (void)dealloc;
 {
-    [_window release];
+    NSLog(@"WindowController Dealloc");
+    [_window setDelegate:nil];
     [super dealloc];
 }
 
+- (id<WindowControllerDelegate>)delegate;
+{
+    return _delegate;
+}
+- (void)setDelegate:(id<WindowControllerDelegate>)newDelegate; // unsafe unretained
+{
+    _delegate = newDelegate;
+}
 - (void)setWindow:(NSWindow*)newWindow;
 {
-    NSWindow* oldWindow = _window;
     _window = newWindow;
-    [oldWindow release];
 }
 - (NSWindow*)window;
 {
