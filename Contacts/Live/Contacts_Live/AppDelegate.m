@@ -17,7 +17,23 @@
     NSLog(@"applicationDidFinishLaunching");
 }
 
--(IBAction)newDocumentWindow:(id) sender;
+- (IBAction)openExistingDocument:(id) sender;
+{
+    NSArray* selectedFiles;
+    NSOpenPanel* panel = [NSOpenPanel openPanel];
+    NSArray* types = [NSArray arrayWithObjects: @"contact", nil];
+    [panel setAllowsMultipleSelection: YES];
+    [panel runModalForTypes: types];
+    selectedFiles = [panel filenames];
+    if ([selectedFiles count] > 0) {
+        NSLog(@"%@", [selectedFiles objectAtIndex:0]);
+	[_openDocumentController openDocumentAtPath:[selectedFiles objectAtIndex:0] sender:sender];
+    } else {
+        NSLog(@"The user selected no files.");
+    }
+}
+
+- (IBAction)newDocumentWindow:(id) sender;
 {
     [_openDocumentController newDocument:sender];
 }

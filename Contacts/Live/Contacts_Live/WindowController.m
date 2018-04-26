@@ -7,7 +7,7 @@
 - (id)initWithWindowNibName:(NSString*)nibName;
 {
     self = [super init];
-    [NSBundle loadNibNamed:nibName owner: self];
+    _nibName = [nibName retain];
     return self;
 }
 
@@ -19,6 +19,11 @@
 - (void)windowWillClose:(NSNotification*)aNotification;
 {
     [_delegate windowDidCloseForWindowController:self];
+}
+
+- (void)wakeUpNib;
+{
+    [NSBundle loadNibNamed:_nibName owner: self];
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector;
@@ -33,6 +38,7 @@
 {
     NSLog(@"WindowController Dealloc");
     [_window setDelegate:nil];
+    [_nibName release];
     [super dealloc];
 }
 

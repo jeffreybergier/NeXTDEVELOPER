@@ -3,4 +3,8 @@
     OUTLETS = {}; 
     SUPERCLASS = NSObject; 
 };
-"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"FirstResponder" = {
+    ACTIONS = {"newDocumentWindow:" = id; "openExistingDocument:" = id; }; 
+    OUTLETS = {}; 
+    SUPERCLASS = NSObject; 
+};
