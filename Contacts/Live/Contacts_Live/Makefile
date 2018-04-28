@@ -19,10 +19,10 @@ LOCAL_RESOURCES = EditContactWindowController.nib\
                   NEXTSTEP_Contacts_Live.nib WINDOWS_Contacts_Live.nib
 
 CLASSES = AppDelegate.m WindowController.m EditContactWindowController.m\
-          OpenDocumentController.m
+          OpenDocumentController.m NSOpenPanel+Contacts.m
 
 HFILES = AppDelegate.h WindowController.h EditContactWindowController.h\
-         OpenDocumentController.h
+         OpenDocumentController.h NSOpenPanel+Contacts.h
 
 MFILES = Contacts_Live_main.m
 

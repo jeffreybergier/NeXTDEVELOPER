@@ -2,6 +2,7 @@
 
 #import "AppDelegate.h"
 #import "EditContactWindowController.h"
+#import "NSOpenPanel+Contacts.h"
 
 @implementation AppDelegate
 
@@ -19,17 +20,13 @@
 
 - (IBAction)openExistingDocument:(id) sender;
 {
-    NSArray* selectedFiles;
-    NSOpenPanel* panel = [NSOpenPanel openPanel];
-    NSArray* types = [NSArray arrayWithObjects: @"contact", nil];
-    [panel setAllowsMultipleSelection: YES];
-    [panel runModalForTypes: types];
-    selectedFiles = [panel filenames];
-    if ([selectedFiles count] > 0) {
-        NSLog(@"%@", [selectedFiles objectAtIndex:0]);
-	[_openDocumentController openDocumentAtPath:[selectedFiles objectAtIndex:0] sender:sender];
-    } else {
-        NSLog(@"The user selected no files.");
+    NSEnumerator* enumerator;
+    NSOpenPanel* panel;
+    NSString* enumeratedPath;
+    panel = [NSOpenPanel contactsOpenPanel];
+    enumerator = [[panel filenames] objectEnumerator];
+    while ((enumeratedPath = [enumerator nextObject])) {
+        [_openDocumentController openDocumentAtPath:enumeratedPath sender: sender];
     }
 }
 
@@ -38,6 +35,7 @@
     [_openDocumentController newDocument:sender];
 }
 
+/*
 - (BOOL)respondsToSelector:(SEL)aSelector;
 {
     if (aSelector != NULL) {
@@ -45,6 +43,7 @@
     }
     return [super respondsToSelector:aSelector];
 }
+*/
 
 -(void)dealloc;
 {

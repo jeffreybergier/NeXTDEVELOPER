@@ -6,15 +6,18 @@
 
 - (id)initWithFilePath:(NSString*)aPath;
 {
-    self = [super initWithWindowNibName: @"EditContactWindowController"];
     _filePath = [aPath retain];
-    [self wakeUpNib];
+    self = [super initWithWindowNibName: @"EditContactWindowController"];
     return self;
 }
 
 - (void)awakeFromNib;
 {
-    [[self window] setTitle: _filePath];
+    if (_filePath) {
+        [[self window] setTitle: _filePath];
+    } else {
+        [[self window] setTitle: @"New Contact"];
+    }
 }
 
 - (NSString*)filePath;

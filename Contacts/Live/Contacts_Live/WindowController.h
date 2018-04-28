@@ -12,12 +12,12 @@
 {
     IBOutlet NSWindow* _window;
     id<WindowControllerDelegate> _delegate;
-    NSString* _nibName;
 }
 
+// awakeFromNib called when calling superclass init.
+// be sure to set instance variables before calling super
 - (id)initWithWindowNibName:(NSString*)nibName;
 - (void)setWindow:(NSWindow*)newWindow; // unsafe unretained
-- (void)wakeUpNib; // responsibility of subclass to call this method at end of custom INIT method.
 - (NSWindow*)window;
 - (id<WindowControllerDelegate>)delegate;
 - (void)setDelegate:(id<WindowControllerDelegate>)newDelegate; // unsafe unretained
